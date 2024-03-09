@@ -10,6 +10,9 @@ app = Flask(__name__)
 
 # YOLOv5 모델 로드
 #model = torch.hub.load('ultralytics/yolov5', 'custom', path='./yolov5x.pt', force_reload=True)
+@app.route('/')
+def index():
+    return "AI Server is running!"
 
 # 첫 번째 엔드포인트: 항상 같은 바코드 번호 반환
 @app.route('/detect_fixed', methods=['POST'])
