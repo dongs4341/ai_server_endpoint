@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-import torch
 from PIL import Image
 import io
 import base64
