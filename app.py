@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
-from PIL import Image
+#mport torch
+#from PIL import Image
 import io
-import base64
-import numpy as np
-import cv2
+#import base64
+#import numpy as np
+#import cv2
 
 app = Flask(__name__)
 
