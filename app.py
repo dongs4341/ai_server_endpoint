@@ -23,7 +23,7 @@ def detect_fixed():
     if file.filename == '':
         return jsonify({'error': "선택된 파일이 없습니다"}), 400
     # 항상 같은 바코드 번호 반환
-    return jsonify({'barcode': "880123456893"}), 200
+    return jsonify({"880123456893"}), 200
 '''
 # 두 번째 엔드포인트: AI 모델을 사용하여 바코드 객체 추출 및 숫자 추출
 @app.route('/detect_ai', methods=['POST'])
