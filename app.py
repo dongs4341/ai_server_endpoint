@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 #import torch
 from PIL import Image
 import io
-from pyzbar.pyzbar import decode
+#from pyzbar.pyzbar import decode
 
 app = Flask(__name__)
 
@@ -13,6 +13,16 @@ app = Flask(__name__)
 def index():
     return "AI Server is running!"
 
+@app.route('/detect_fixed', methods=['POST'])
+def detect_fixed():
+    if 'file' not in request.files:
+        return jsonify({'error': "파일 부분이 없습니다"}), 400
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': "선택된 파일이 없습니다"}), 400
+    # 항상 같은 바코드 번호 반환
+    return jsonify({'barcode': "880123456893"}), 200
+'''
 @app.route('/detect_barcode', methods=['POST'])
 def detect_barcode():
     if 'file' not in request.files:
@@ -33,7 +43,7 @@ def detect_barcode():
         return jsonify({'result': 0, 'message': 'No barcodes detected'}), 200
     else:
         return jsonify({'result': 1, 'barcodes': barcode_numbers}), 200
-
+'''
 '''
 @app.route('/detect_ai', methods=['POST'])
 def detect_ai():
