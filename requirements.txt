@@ -1,3 +1,4 @@
 Flask==3.0.2
 pillow==10.2.0
 pyzbar==0.1.9
+pyzxing==1.0.2
