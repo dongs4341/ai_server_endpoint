@@ -15,6 +15,7 @@ def index():
 
 @app.route('/detect_fixed', methods=['POST'])
 def detect_fixed():
+    print("접속 성공")
     if 'file' not in request.files:
         return jsonify({'error': "파일 부분이 없습니다"}), 400
     file = request.files['file']
